@@ -73,9 +73,13 @@ router.put("/posts/:postId", async(req, res) => {
 //게시글 삭제
 router.delete("/posts/:postId", async(req, res) =>{
     const {postId} = req.params;
+    const {password} = req.body;
     try {
         const existsPost = await Post.find({_id: ObjectId(postId)});
         if(existsPost.length){
+            if(password!=existsPost[0].password){
+              return res.status(400).json({success: false, errorMessagage: "비밀번호가 틀렸습니다."})
+            }
             await Post.deleteOne({_id: ObjectId(postId)});
             await Comment.deleteMany({postId: postId});
             res.json({ success:true});
