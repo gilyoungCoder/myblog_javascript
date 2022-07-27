@@ -15,3 +15,6 @@
 | 댓글 수정 | /api/posts/:postId/comments/:commentId | PUT | **body** <br>{content} | 
 | 댓글 삭제 | /api/posts/:postId/comments/:commentId | DELETE | | 
 
+
+
+[구현 페이지 링크](13.125.52.83) => 13.125.52.83 
