@@ -5,9 +5,10 @@ const port = 3000;
 
 connect()
 
-const postsRouter = require("./routes/posts");
+/*const postsRouter = require("./routes/posts");
 const commentsRouter = require("./routes/comments");
-
+*/
+const {postsRouter, commentsRouter} = require("./routes")
 const requestMiddleware = (req, res, next)=> {
     console.log("Request URL:", req.originalUrl, "-", new Date());
     next(); 
